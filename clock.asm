@@ -5,6 +5,7 @@ section   .text
 
 get_hour:
         mov     rax,qword[timevalue] ; qword[timevalue]  % 86400
+        add     rax, 3600
         mov     rcx, 86400
         xor     rdx,rdx
         div     rcx
@@ -12,7 +13,6 @@ get_hour:
         mov     rcx, 3600
         xor     rdx,rdx
         div     rcx
-        add     rax,1 ; + 1
         mov     byte[hour], al
         ret
 

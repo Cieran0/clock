@@ -35,30 +35,22 @@ get_min:
 place:
         mov     rax, qword[r11]
         mov     r9,row_1
-        add     r9,r10
-        mov     qword[r9], rax
+        mov     qword[r9+r10], rax
         mov     rax, qword[r11+8]
         mov     r9,row_2
-        add     r9,r10
-        mov     qword[r9], rax
+        mov     qword[r9+r10], rax
         mov     rax, qword[r11+16]
         mov     r9,row_3
-        add     r9,r10
-        mov     qword[r9], rax
+        mov     qword[r9+r10], rax
         mov     rax, qword[r11+24]
         mov     r9,row_4
-        add     r9,r10
-        mov     qword[r9], rax
+        mov     qword[r9+r10], rax
         mov     rax, qword[r11+32]
         mov     r9,row_5
-        add     r9,r10
-        mov     qword[r9], rax
+        mov     qword[r9+r10], rax
         ret
 
 add_num:
-        cmp_0:
-                cmp     al, 0
-                jne     cmp_1
                 mov     r11,num_0
         cmp_1:
                 cmp     al, 1

@@ -5,7 +5,7 @@ section   .text
 
 get_hour:
         mov     rax,qword[timevalue] ; qword[timevalue]  % 86400
-        add     rax, 3600
+        ;add     rax, 3600 FIXME: Daylight saving needs to be checked
         mov     rcx, 86400
         xor     rdx,rdx
         div     rcx

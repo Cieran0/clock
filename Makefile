@@ -8,7 +8,7 @@ clean:
 
 install:
 	make
-	mv clock /home/cieran/bin
+	mv clock ~/bin
 
 uninstall:
-	rm /home/cieran/bin/clock
+	rm ~/bin/clock

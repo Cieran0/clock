@@ -5,7 +5,6 @@ section   .text
 
 get_hour:
         mov     rax,qword[timevalue] ; qword[timevalue]  % 86400
-        ;add     rax, 3600 FIXME: Daylight saving needs to be checked
         mov     rcx, 86400
         xor     rdx,rdx
         div     rcx
@@ -138,9 +137,8 @@ print:
         ret
 
 _start:
-        mov     rax, 96
+        mov     rax, 201
         mov     rdi, timevalue
-        mov     rsi, timezone
         syscall
         call    get_hour
         call    add_hour
@@ -162,7 +160,6 @@ row_5:      db        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"   \/   ",0,0,0,0,0,0,0,0
 hour:       db        0
 min:        db        0
 timevalue:  db        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-timezone:   db        0,0,0,0,0,0,0,0
 
 num_0:   db" 000000 "," 00  00 "," 00  00 "," 00  00 "," 000000 "
 num_1:   db" 1111   ","   11   ","   11   ","   11   "," 111111 "

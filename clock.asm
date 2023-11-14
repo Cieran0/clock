@@ -12,6 +12,7 @@ get_hour:
         mov     rcx, 3600
         xor     rdx,rdx
         div     rcx
+	;inc	al
         mov     byte[hour], al
         ret
 
